@@ -1,33 +1,35 @@
 # Documentation map
 
-This is the planned human navigation for the v2 documentation set. Target pages may be
-added in later migration phases; the map fixes ownership and destinations before prose
-is moved or rewritten.
+These pages describe the toolkit's `develop/v2.0.0` development line. Runtime files and
+release artifacts remain canonical in the product repository.
 
 ## Get started
 
-- `getting-started/index.md` — prerequisites, mental model, and first successful run
-- `getting-started/install.md` — install and verify
-- `getting-started/update.md` — update an owned installation safely
-- `getting-started/uninstall.md` — remove toolkit-owned links and state
+- [Overview and prerequisites](getting-started/index.md)
+- [Install and verify](getting-started/install.md)
+- [Update](getting-started/update.md)
+- [Uninstall](getting-started/uninstall.md)
 
 ## Use and configure
 
-- `guides/usage.md` — common workflows and bounded output
-- `guides/configuration.md` — configuration files, precedence, and examples
-- `guides/project-integration.md` — adopt the project template without overwriting policy
-- `reference/agenttool.md` — AgentTool commands and output contracts
-- `reference/skills.md` — human catalog of skill triggers and limitations
-- `reference/agents.md` — custom-agent roles, permissions, and evidence expectations
-- `reference/releases-and-versioning.md` — supported lines, changelog, and release semantics
+- [Common workflows](guides/usage.md)
+- [Configuration](guides/configuration.md)
+- [Project integration](guides/project-integration.md)
+- [AgentTool command reference](reference/agenttool.md)
+- [Skills catalog](reference/skills.md)
+- [Native agents](reference/agents.md)
+- [Releases and versioning](reference/releases-and-versioning.md)
 
 ## Understand the system
 
-- `concepts/index.md` — deterministic tooling, bounded judgment, and GPT reasoning
-- `concepts/jev.md` — human explanation of JEV, routing, uncertainty, and calibration
-- `architecture/index.md` — repository boundaries, components, and data flow
-- `security/index.md` — security, credentials, privacy, and artifact handling
-- `metrics/index.md` — evaluation methodology and the metrics-site relationship
+- [How the pieces work together](concepts/index.md)
+- [JEV and bounded judgment](concepts/jev.md)
+- [Model routing and context cost](concepts/model-routing.md)
+- [Architecture](architecture/index.md)
+- [Upstream integrations](architecture/upstream-integrations.md)
+- [Security and privacy](security/index.md)
+- [Third-party integrations and notices](security/third-party-and-notices.md)
+- [Metrics and evaluation](metrics/index.md)
 
 The metrics dashboard and sanitized versioned data will be published at
 <https://simplexidev.github.io/codex-toolkit-metrics/>. This repository explains how to
@@ -35,10 +37,12 @@ interpret them; it does not implement or host the evaluator.
 
 ## Solve problems and contribute
 
-- `troubleshooting/index.md` — installation, configuration, command, and JEV failures
-- `development/index.md` — local product development and validation
-- `contributing/index.md` — contribution flow, documentation standards, and review
-- `examples/index.md` — end-to-end, sanitized examples
+- [Troubleshooting](troubleshooting/index.md)
+- [Product development](development/index.md)
+- [Skill authoring](development/skill-authoring.md)
+- [Release process](development/releases.md)
+- [Contributing](contributing/index.md)
+- [Examples](examples/index.md)
 
 ## Migration control
 

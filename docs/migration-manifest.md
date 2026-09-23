@@ -133,3 +133,19 @@ human docs may restate verified, sanitized conclusions only.
    repository must never become a runtime dependency.
 5. Validate that JEV's skill-loaded compact references still resolve locally in the
    product repository and that uncertainty continues to route to Codex.
+
+## Baseline import status
+
+The human rewrite was completed against product commit `a7e2515` on `develop/v2.0.0`.
+The pages under `getting-started/`, `guides/`, `concepts/`, `architecture/`, `reference/`,
+`security/`, `metrics/`, `troubleshooting/`, `development/`, `contributing/`, and
+`examples/` now cover the destinations above. Closely related proposed destinations were
+combined where one task-oriented page is clearer; for example repository boundaries are
+part of `architecture/index.md`, artifact privacy is part of `security/index.md`, and
+pull-request expectations are part of `contributing/index.md`.
+
+No runtime file was moved, deleted, or redirected. In particular, the JEV skill and its
+compact references remain product-local. Older source prose that described three agents
+or 25 skills was not carried forward: the verified baseline contains one native reviewer
+agent and 24 skill directories. Release status is linked to the product repository rather
+than inferred from roadmap branch names.

@@ -1,22 +1,31 @@
-# codex-toolkit documentation
+# Codex Toolkit documentation
 
-Human-oriented documentation for
-[`simplexidev/codex-toolkit`](https://github.com/simplexidev/codex-toolkit) and its
-evaluation ecosystem.
+Codex Toolkit gives Codex a small set of safe, repeatable repository workflows backed by
+one .NET utility. It favors exact computation first, bounded semantic judgment only when
+useful, and general model reasoning for work that genuinely needs it.
 
-This repository is not a runtime dependency. Agent instructions, runtime skills,
-compact runtime references, templates, and executable behavior remain in the product
-repository. Metrics implementation and sanitized metrics data belong in
-[`simplexidev/codex-toolkit-metrics`](https://github.com/simplexidev/codex-toolkit-metrics).
+This is the human documentation for
+[`simplexidev/codex-toolkit`](https://github.com/simplexidev/codex-toolkit). Start with
+[what the toolkit is](docs/getting-started/index.md), then [install it](docs/getting-started/install.md)
+or browse the [documentation map](docs/README.md).
 
-The documentation set is being assembled for the v2 release line. See the
-[documentation map](docs/README.md) for the planned navigation and the
-[migration manifest](docs/migration-manifest.md) for the source-audience audit.
+The repositories have deliberately separate jobs:
+
+- [`codex-toolkit`](https://github.com/simplexidev/codex-toolkit) owns the plugin,
+  project template, AgentTool, skills, native agent, runtime references, and releases.
+- This repository owns human installation, usage, architecture, security, and
+  contributor guidance. Nothing here is loaded at runtime.
+- [`codex-toolkit-metrics`](https://github.com/simplexidev/codex-toolkit-metrics) owns
+  evaluation code, scenarios, sanitized metrics, and the dashboard.
+
+These pages describe the `develop/v2.0.0` development line unless a page says otherwise.
+For an installed release, prefer the documentation and configuration shipped with that
+tag when behavior differs.
 
 ## Contributing
 
-Read [AGENTS.md](AGENTS.md) before editing. Keep examples free of secrets, private
-source, local paths, and raw evaluation inputs or outputs.
+Read the [contributor guide](docs/contributing/index.md). Repository automation also
+uses `AGENTS.md`; it is policy for editing this repository, not product documentation.
 
 ## License
 

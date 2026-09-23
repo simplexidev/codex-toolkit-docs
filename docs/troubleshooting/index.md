@@ -1,0 +1,57 @@
+# Troubleshooting
+
+Start with:
+
+```console
+dotnet tools/AgentTool.cs doctor
+dotnet tools/AgentTool.cs help
+```
+
+`doctor` checks required .NET/Git prerequisites and reports optional Codex, GitHub CLI,
+tool, installation, and JEV status without printing a credential.
+
+## Command options disappear
+
+The `dotnet` host may consume options such as `--help` and `--project`. Insert `--`:
+
+```console
+dotnet tools/AgentTool.cs -- dotnet verify --project /path/to/App.csproj
+```
+
+## Toolkit root not found
+
+Run the source file from its checkout, pass `--toolkit /path/to/codex-toolkit`, or set
+the non-secret `CODEX_TOOLKIT_ROOT` variable.
+
+## Install reports a conflict
+
+The installer never force-overwrites. Preserve the destination, inspect its owner and
+target, then relocate it yourself only if replacement is intended. Use the same `--home`
+and `--codex-home` values across install, update, and uninstall.
+
+If the checkout moved, move it back and uninstall before relocating it. On Windows,
+enable Developer Mode or suitable symlink permission; `--bin` remains unsupported.
+
+## Skills appear twice
+
+Do not install skills both through the local plugin marketplace and AgentTool's direct
+skill links. Keep the discovery method you prefer; the global instructions and native
+agent still require AgentTool if wanted.
+
+## Affected-project analysis fails
+
+MSBuild evaluation is not treated as an empty dependency graph. Check the selected SDK,
+project imports, permissions, and trustworthiness of imported logic. Shared or unknown
+inputs may intentionally broaden the validation set.
+
+## JEV returns `REVIEW`
+
+Check `JEV_MODE`, credential availability, endpoint, timeout, payload size and shape, and
+the configured thresholds. Do not print the key or raw provider body. Uncertainty is an
+expected result, not a reason to force inclusion or exclusion. Required-mode service
+failure exits with status 3.
+
+## .NET cannot write its cache
+
+In a restricted sandbox, point `DOTNET_CLI_HOME` and `XDG_DATA_HOME` at writable temporary
+directories. Restore, package audit, and some tests may require network access.

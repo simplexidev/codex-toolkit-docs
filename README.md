@@ -7,7 +7,9 @@ useful, and general model reasoning for work that genuinely needs it.
 This is the human documentation for
 [`simplexidev/codex-toolkit`](https://github.com/simplexidev/codex-toolkit). Start with
 [what the toolkit is](docs/getting-started/index.md), then [install it](docs/getting-started/install.md)
-or browse the [documentation map](docs/README.md).
+or browse the [documentation map](docs/README.md). The public metrics dashboard is at
+<https://simplexidev.github.io/codex-toolkit-metrics/>; read the
+[interpretation guide](docs/metrics/dashboard.md) before comparing results.
 
 The repositories have deliberately separate jobs:
 

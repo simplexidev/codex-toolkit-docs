@@ -149,3 +149,9 @@ compact references remain product-local. Older source prose that described three
 or 25 skills was not carried forward: the verified baseline contains one native reviewer
 agent and 24 skill directories. Release status is linked to the product repository rather
 than inferred from roadmap branch names.
+
+The later architecture/security/JEV/metrics deep-reference phase added independent human
+pages for runtime data flows, context efficiency, the credential/subprocess boundary,
+evaluation methodology, and dashboard interpretation. It did not migrate or replace any
+runtime reference, evaluator implementation, scenario, schema, public dataset, or
+dashboard asset. Product and metrics repositories remain canonical for those materials.

@@ -1,5 +1,8 @@
 # Develop the product
 
+For the complete contributor workflow across the product, docs, and metrics repositories,
+start with [three-repository development workflow](workflow.md).
+
 Product code, skills, runtime references, templates, tests, and releases belong in
 [`simplexidev/codex-toolkit`](https://github.com/simplexidev/codex-toolkit). Human prose
 belongs here, and evaluator/dashboard work belongs in the

@@ -39,6 +39,7 @@ interpret them; it does not implement or host the evaluator.
 
 - [Troubleshooting](troubleshooting/index.md)
 - [Product development](development/index.md)
+- [Three-repository development workflow](development/workflow.md)
 - [Skill authoring](development/skill-authoring.md)
 - [Release process](development/releases.md)
 - [Contributing](contributing/index.md)

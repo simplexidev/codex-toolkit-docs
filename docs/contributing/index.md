@@ -9,8 +9,11 @@ Choose the repository by ownership before editing:
   [`codex-toolkit-metrics`](https://github.com/simplexidev/codex-toolkit-metrics).
 
 Read the target repository's `AGENTS.md`, start from its designated base, and keep one
-change focused on one concern. Preserve unrelated work. Never commit secrets, private
-source, raw prompts/results, absolute developer paths, or temporary planning notes.
+change focused on one concern. `AGENTS.md` guides coding agents; these documentation pages
+guide people, so do not duplicate agent instructions wholesale. Preserve unrelated work.
+Never commit secrets, private source, raw prompts/results, absolute developer paths, or
+temporary planning notes. Follow the [three-repository development workflow](../development/workflow.md)
+for branch/PR discipline, validation, publication, and release expectations.
 
 For documentation changes, verify every behavioral claim against product code, schemas,
 tests, or the selected release. Write for people instead of copying agent instructions.

@@ -25,13 +25,18 @@ release artifacts remain canonical in the product repository.
 - [How the pieces work together](concepts/index.md)
 - [JEV and bounded judgment](concepts/jev.md)
 - [Model routing and context cost](concepts/model-routing.md)
+- [Context and token efficiency](concepts/context-and-token-efficiency.md)
 - [Architecture](architecture/index.md)
+- [Runtime data flows](architecture/runtime-data-flows.md)
 - [Upstream integrations](architecture/upstream-integrations.md)
 - [Security and privacy](security/index.md)
+- [JEV credentials and subprocesses](security/jev-credentials-and-subprocesses.md)
 - [Third-party integrations and notices](security/third-party-and-notices.md)
 - [Metrics and evaluation](metrics/index.md)
+- [Evaluation methodology](metrics/methodology.md)
+- [Interpret the metrics dashboard](metrics/dashboard.md)
 
-The metrics dashboard and sanitized versioned data will be published at
+The metrics dashboard and sanitized versioned data are published at
 <https://simplexidev.github.io/codex-toolkit-metrics/>. This repository explains how to
 interpret them; it does not implement or host the evaluator.
 

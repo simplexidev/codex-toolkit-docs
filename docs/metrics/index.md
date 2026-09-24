@@ -3,8 +3,9 @@
 Evaluation implementation, scenarios, statistics, sanitized history, and dashboard code
 belong to
 [`simplexidev/codex-toolkit-metrics`](https://github.com/simplexidev/codex-toolkit-metrics).
-The intended Pages location is <https://simplexidev.github.io/codex-toolkit-metrics/>;
-until Pages is enabled, use the repository as the source of truth.
+The published dashboard is
+<https://simplexidev.github.io/codex-toolkit-metrics/>. The metrics repository and its
+versioned public files remain the source of truth behind the presentation.
 
 The product's `AgentTool eval` command performs inexpensive offline integrity checks for
 skill scenarios and fixtures. Unit tests cover executable behavior. Neither by itself
@@ -21,3 +22,7 @@ private source, and logs remain in ignored local storage or short-lived CI artif
 Only reviewed aggregates accepted by the metrics repository's versioned public schema
 may be committed or published. Evaluation executors and judges use OpenAI/GPT models;
 JEV can support bounded classification but does not replace the evaluator or judge.
+
+Read the [methodology reference](methodology.md) for arms, evidence kinds, compatibility,
+judging, and limitations. Read [interpreting the dashboard](dashboard.md) before drawing a
+conclusion from a chart or aggregate.

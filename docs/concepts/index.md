@@ -18,4 +18,6 @@ template adds repository-specific constraints without duplicating the central to
 
 This separation matters: broad capability does not require loading every instruction,
 tool, or reference into every conversation. See [architecture](../architecture/index.md),
+[runtime data flows](../architecture/runtime-data-flows.md),
+[context and token efficiency](context-and-token-efficiency.md),
 [skills](../reference/skills.md), [agents](../reference/agents.md), and [JEV](jev.md).

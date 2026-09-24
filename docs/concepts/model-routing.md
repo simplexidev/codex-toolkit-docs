@@ -12,4 +12,6 @@ for hard debugging or design, not routine mechanical work.
 
 Evaluation must measure correctness alongside tokens, turns, tool calls, elapsed time,
 and file reads. A cheaper answer that misses a defect is a regression. Evaluation budgets
-are comparison thresholds, not live task-abort limits. See [metrics](../metrics/index.md).
+are comparison thresholds, not live task-abort limits. See
+[context and token efficiency](context-and-token-efficiency.md) and the
+[evaluation methodology](../metrics/methodology.md).

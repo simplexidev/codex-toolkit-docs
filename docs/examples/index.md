@@ -28,6 +28,9 @@ contain source, environment values, or credentials.
 
 ```json
 {
+  "capability": "relevance",
+  "purpose": "docs-impact",
+  "deterministicNarrowed": true,
   "query": "Which excerpts describe build configuration?",
   "candidates": [
     {"id": "readme", "text": "Build with the .NET 10 SDK."},

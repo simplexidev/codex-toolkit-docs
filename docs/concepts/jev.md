@@ -12,12 +12,25 @@ below `0.10` to `EXCLUDE`, and the middle to `REVIEW`. Choice and Score need at 
 `0.80` confidence. These values come from `config/jev.json` and need task-specific
 calibration.
 
+`noul` returns a probability and routes it to `INCLUDE`, `EXCLUDE`, or `REVIEW`.
+`choice` selects among a named criteria object, and `score` selects an ordered criteria
+array; both require at least two choices and sufficient confidence. `screen` applies the
+same bounded policy to a pre-narrowed list of uniquely identified candidates. The local
+input must declare a configured `capability`, an allowed `purpose`, and
+`deterministicNarrowed: true`; those routing fields are not transmitted to the provider.
+
+Each capability starts with an expected-call budget of zero, with a hard maximum when it
+is permitted. The current permitted families are relevance, PR/SARIF triage, bounded
+failure or upstream classification, and one ambiguous routing tie-break. Exact repository
+facts and commands, authorization or security disposition, code generation, architecture,
+and open-ended debugging are disallowed. A service response cannot override those bounds.
+
 ## Safe request flow
 
 Prepare a small, sanitized input:
 
 ```json
-{"state":"README describes build setup","instructions":"Is this relevant to build documentation?"}
+{"capability":"relevance","purpose":"docs-impact","deterministicNarrowed":true,"state":"README describes build setup","instructions":"Is this relevant to build documentation?"}
 ```
 
 Inspect the request without transmitting it:
@@ -41,8 +54,8 @@ submission.
 ## Failure, modes, and cache
 
 `auto` and `off` preserve normal Codex fallback. Missing credentials, malformed answers,
-service failure, and uncertain judgments become `REVIEW`; `required` mode additionally
-uses exit code 3 for service failure. Requests are not automatically retried.
+service failure, policy refusal, and uncertain judgments become `REVIEW`; `required` mode
+additionally uses exit code 3 for service failure. Requests are not automatically retried.
 
 The best-effort cache hashes the canonical request and endpoint and stores responses,
 not requests or keys. Its default lifetime is 24 hours; set `cacheHours` to `0` to

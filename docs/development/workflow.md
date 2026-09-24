@@ -1,0 +1,160 @@
+# Three-repository development workflow
+
+Codex Toolkit development uses three sibling repositories. Keep them beside one another
+so product, documentation, and evaluation work can be inspected together without making
+any repository a runtime dependency of another:
+
+```text
+workspace/
+├── codex-toolkit/          # product runtime
+├── codex-toolkit-docs/     # this human documentation site
+└── codex-toolkit-metrics/  # evaluator, public metrics, and dashboard
+```
+
+Local runner and prompt state may live in `.agent-results/prompts/` next to those
+repositories. It is local state: do not commit, move, delete, or publish it.
+
+## Pick the owning repository
+
+`codex-toolkit` owns one unified Codex plugin, one project template, `AgentTool`, runtime
+skills, compact agent-consumed references, native/custom agent metadata and evidence,
+JEV integration, installers, tests, and releases. Runtime references stay there even when
+they are Markdown. Before moving any product document, search its consumers; a skill or
+agent-loaded reference must remain product-local.
+
+`codex-toolkit-docs` owns explanations for people: installation, configuration, examples,
+architecture, security, contributor guidance, and metrics methodology. It is never a
+runtime input. Explain runtime material here in human terms rather than copying a compact
+skill reference or `AGENTS.md`.
+
+`codex-toolkit-metrics` owns evaluator code, scenarios, schemas, statistics, sanitized
+versioned public data, and the dashboard. It can evaluate the product through stable
+structured outputs, but is neither a plugin nor a product dependency. Its Pages site is
+<https://simplexidev.github.io/codex-toolkit-metrics/>; do not create a separate
+`simplexidev.github.io` repository.
+
+## Start and finish a change
+
+Read the `AGENTS.md` in the repository you will modify. Those files are instructions for
+coding agents and repository automation; this site is the human explanation. Do not copy
+an entire `AGENTS.md` into these pages. Inspect status and remotes before changing files
+and preserve unrelated work.
+
+After each repository has its initial commit, use its designated integration base:
+
+1. Fetch and prune, then start clean from the current base. Product v2 work targets
+   `develop/v2.0.0` once established; docs and metrics work target their default branch.
+2. Create one fresh branch named `roadmap/<phase-slug>` for one focused phase.
+3. Make changes only in the repository that owns the phase. Sibling repositories may be
+   read for verification.
+4. Run the relevant checks, inspect rendered documentation when applicable, and commit.
+5. Push the branch and create or update one pull request to the designated base. Describe
+   scope, validation, security/privacy impact, and any intentionally deferred gate.
+6. Wait for required checks and required approval. Merge if policy and permissions allow,
+   synchronize the base, then delete the merged local branch and, when allowed, its remote
+   branch.
+
+If approval is required, keep the existing pull request and resume it after approval;
+never open duplicate branches or PRs. A first, truly empty docs or metrics repository may
+receive its bootstrap default-branch commit directly. Do not force-push, rewrite tags, or
+leave a merge, rebase, cherry-pick, or revert unfinished.
+
+## Build, test, format, and validate
+
+Run commands from the checkout they name. These are the normal keyless gates, not a claim
+that every optional release or live integration check has run.
+
+For the product (requires .NET 10):
+
+```console
+dotnet test tests/AgentTool.Tests/AgentTool.Tests.csproj
+dotnet tools/AgentTool.cs validate
+dotnet tools/AgentTool.cs eval
+dotnet format tests/AgentTool.Tests/AgentTool.Tests.csproj --no-restore --verify-no-changes
+git diff --check
+```
+
+`AgentTool` is the product's single .NET utility. Prefer extending it with small,
+structured, composable commands over adding helper scripts or asking a model to infer
+facts that tooling can compute. Add focused unit tests for changed behavior; keep command
+schemas, configuration, manifests, installer/update/uninstall behavior, and human docs
+synchronized. Installer tests must use temporary homes, never a real Codex profile.
+
+For metrics (using the SDK selected by `global.json`):
+
+```console
+dotnet restore CodexToolkit.Metrics.slnx
+dotnet test CodexToolkit.Metrics.slnx
+dotnet run --project src/CodexToolkit.Metrics -- validate-evaluation tests/CodexToolkit.Metrics.Tests/Fixtures/evaluation-valid-v1.json
+dotnet run --project src/CodexToolkit.Metrics -- validate-public data/public/example-summary.json
+dotnet run --project src/CodexToolkit.Metrics -- dashboard-check dashboard
+dotnet run --project src/CodexToolkit.Metrics -- publish-pages dashboard data/public _site
+dotnet format CodexToolkit.Metrics.slnx --no-restore --verify-no-changes
+```
+
+For this documentation repository, verify links and Markdown formatting, review the
+rendered pages, and verify behavioral claims against product code, schemas, tests, or a
+selected release. Update `docs/migration-manifest.md` if a source's audience, ownership,
+or consumers change.
+
+## Design for narrow, efficient use
+
+Use this order of decision-making:
+
+1. **Deterministic AgentTool or structured tooling** for exact facts, parsing, validation,
+   affected-path selection, and repeatable execution.
+2. **JEV** for a bounded semantic choice with a tiny reviewed payload, thresholds, call
+   limits, and a safe `REVIEW` outcome.
+3. **Codex reasoning or generation** for work that needs broader synthesis.
+4. **A stronger reasoning model** only when the evidence shows it is justified.
+
+Do not use JEV for authorization, exact facts, or as an always-on substitute for
+deterministic checks. A skill is appropriate for a recurring workflow with a precise
+trigger; keep its instructions short, route with tiny metadata, and load detailed
+references lazily. A custom agent needs evidence that a narrowly scoped role improves the
+outcome; use few such agents, bounded delegation, isolated context, and measured routing
+cases. Broad capability coverage is not a reason to load broad context.
+
+Every new or changed skill needs a realistic positive scenario, a negative trigger, and
+a safety invariant in product `evals/`. Offline `AgentTool eval` checks scenario integrity;
+it is not proof of quality. Meaningful changes also need measurements that compare
+correctness before cost: tokens, turns, tool calls, elapsed time, files/context read,
+routing, delegation, and unnecessary broad operations. Evaluators and judges are
+OpenAI/GPT only—do not add Claude execution or judging. See [skill authoring](skill-authoring.md)
+and [metrics and evaluation](../metrics/index.md).
+
+## Provenance, releases, and publication
+
+Use .NET/BCL facilities unless a dependency has a documented correctness or
+interoperability reason. Follow upstream .NET provenance and license obligations: retain
+required notices, record source/version/license information, do not vendor upstream
+content casually, and review the actual package or version before redistribution. The
+product's [third-party notices](../security/third-party-and-notices.md) are the human
+starting point, not a substitute for that review.
+
+For a product release, synchronize the semantic version in `config/toolkit.json` and
+plugin manifests, run the full required gate, review schemas, notices, changelog, and
+package contents, and create/push `vMAJOR.MINOR.PATCH` only with explicit authorization.
+The release workflow creates a draft source release and SHA-256 checksum for review. Do
+not package tests, caches, local prompt state, private metrics, or result stores. See
+[release process](releases.md) and [releases and versioning](../reference/releases-and-versioning.md).
+
+Metrics publication is more restrictive: normal CI is synthetic or mocked and keyless;
+raw runs, prompts, responses, transcripts, private source, and logs stay ignored locally
+or in short-lived CI artifacts. Commit and publish only reviewed, schema-valid sanitized
+aggregates allowed by the metrics publication manifest. Check dashboard output before it
+is deployed and keep its paths compatible with the project Pages base.
+
+## Secrets and security reports
+
+Never commit or paste secrets, raw private source, prompts, responses, local absolute
+paths, or unsanitized logs into a PR, release, documentation, public data, or dashboard.
+`TYPESAFE_API_KEY` must be read only at the JEV authorization boundary: never persist,
+print, serialize, echo, or pass it to unrelated subprocesses. Normal JEV tests and CI
+use fake HTTP and no key; a deliberately scoped live check is the exception.
+
+Report a security issue through the product repository's
+[private vulnerability reporting channel](https://github.com/simplexidev/codex-toolkit/security/advisories/new)
+and include only a minimal sanitized reproduction. If that channel is unavailable, ask a
+maintainer for a private channel. Do not disclose an unpatched vulnerability in a public
+issue or evaluation artifact.

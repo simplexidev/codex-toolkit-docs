@@ -1,7 +1,7 @@
 # Start here
 
 Codex Toolkit is a collection of focused Codex workflows for repository and .NET work.
-It combines one local command-line program, a Codex plugin containing 24 skills, a
+It combines one local command-line program, a Codex plugin containing 29 skills, a
 project template, global instructions, and one optional read-only reviewer agent.
 
 The toolkit exists to make routine work cheaper and more predictable. AgentTool computes

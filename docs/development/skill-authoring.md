@@ -6,7 +6,8 @@ Create a skill only for a distinct, recurring workflow with a precise trigger. K
 security-sensitive workflows.
 
 Every skill needs a realistic positive scenario, a negative trigger, and a safety
-invariant under product `evals/`. Deterministic support belongs in AgentTool with unit
+invariant under product `evals/`; product skills currently also carry an
+`agents/openai.yaml` descriptor. Deterministic support belongs in AgentTool with unit
 tests. Validate actual YAML, TOML, JSON, and schemas with standard parsers and an official
 skill validator when available.
 

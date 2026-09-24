@@ -24,6 +24,21 @@ separately because plugin installation does not populate Codex's native agent di
 The project template is copied selectively into target repositories. Upstream .NET tools
 and skills are referenced, never vendored or automatically installed.
 
+## Product layout
+
+The product has one plugin at `plugins/codex-toolkit/`: its `plugin.json` supplies discovery
+metadata, `skills/` contains the task-triggered workflows, and `references/` holds compact
+material that only selected skills load. `tools/AgentTool.cs` is shared by all deterministic
+workflows. `global/AGENTS.md` provides installed broad policy, while `agents/reviewer.toml`
+is the separately discovered native reviewer. `config/` and `schemas/` define policy and
+validated inputs. `templates/project/` is opt-in project material—global/project
+instructions, a project Codex config, PR template, and optional .NET defaults—not a
+runtime dependency of the central installation.
+
+Installing through a local plugin marketplace can discover the plugin's skills, but it
+does not install the global instruction file or native agent. AgentTool's direct install
+links those components and skills; choose one skill-discovery route to avoid duplicates.
+
 ## Repository boundaries
 
 - [`codex-toolkit`](https://github.com/simplexidev/codex-toolkit): runtime product,

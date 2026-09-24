@@ -55,3 +55,16 @@ failure exits with status 3.
 
 In a restricted sandbox, point `DOTNET_CLI_HOME` and `XDG_DATA_HOME` at writable temporary
 directories. Restore, package audit, and some tests may require network access.
+
+## A diagnostic plan cannot narrow the work
+
+`repo affected-projects`, `dotnet inspect`, build plans, and test plans use MSBuild
+evaluation. An import error, unavailable SDK, or untrusted imported project logic is a
+real boundary: correct the environment or use a trusted repository before treating the
+graph as complete. Do not turn an evaluation failure into an empty affected-project list.
+
+## GitHub commands fail
+
+Install and authenticate the GitHub CLI independently, then verify its access in the
+target repository. `github actions`, PR status, review comments, and issue-start need
+network access and repository permission; AgentTool deliberately does not supply either.

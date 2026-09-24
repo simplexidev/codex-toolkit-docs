@@ -7,8 +7,9 @@ directory into a trusted target repository.
 1. Merge the template `AGENTS.md` with existing instructions and fill in architecture,
    validation targets, paths, and deployment constraints.
 2. Merge `.codex/config.toml`; do not replace established project settings.
-3. Review optional `.NET` defaults individually. They are starting points, not required
-   product dependencies.
+3. Review optional `.NET` defaults individually: `.editorconfig`, `Directory.Build.props`,
+   `Directory.Packages.props`, `global.json`, and `version.json`. They are starting points,
+   not required product dependencies.
 4. Merge the pull-request template with the repository's existing review policy.
 5. Run the project's normal checks and review the resulting diff.
 

@@ -12,6 +12,8 @@ override this policy.
 | `output-limits.json` | Maximum summary lines, items, line length, and output characters |
 | `repo-health.json` | Framework and MSBuild property policy |
 | `ecosystem.json` | Repository ownership and product paths |
+| `agent-candidates.json`, `capabilities.json` | Evidence-backed agent inventory and capability/routing coverage |
+| `agent-tool-contracts.json` | Versioned shape contracts for structured command output |
 
 Treat the product's
 [`schemas/`](https://github.com/simplexidev/codex-toolkit/tree/develop/v2.0.0/schemas)
@@ -27,6 +29,12 @@ For installation, `--home DIR` creates an isolated profile and ignores ambient
 `CODEX_HOME`; `--codex-home DIR` is an explicit Codex directory. Existing user
 `config.toml` is never edited. The example `config/codex-recommended.toml.example` must be
 merged selectively by the user.
+
+Configuration loading is command-sensitive. Lifecycle, results, validation, release, and
+upstream commands use their own safe defaults; other commands load the product JSON
+configuration. Environment overrides apply only to JEV settings. There is no project-local
+policy override mechanism, and `model-routing.json` is advisory—not an automatic model
+selector. The native reviewer's TOML is the actual agent model/sandbox configuration.
 
 ## JEV environment overrides
 

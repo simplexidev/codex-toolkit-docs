@@ -1,38 +1,28 @@
 # Skills catalog
 
-The plugin contains 24 narrowly triggered skills. A skill supplies workflow guidance;
-it does not grant new authority or make every named external tool available.
+The unified plugin currently contains 29 narrowly triggered skills. A skill is routing
+and workflow guidance, not an authority grant or an implicit installation of an external
+tool. Runtime `SKILL.md` files and their compact references stay canonical in the product
+repository; this is the human index.
 
-| Skill | Use it for |
+| Skill | Intended role |
 |---|---|
-| `address-pr-review` | Address concrete review comments |
-| `agent-maintenance` | Maintain installed toolkit components or configuration |
-| `api-compatibility` | Check a real public .NET API surface change |
-| `architecture-change` | Plan or review a component-boundary change |
-| `benchmark` | Create or run an explicitly requested benchmark |
-| `dependency-change` | Change .NET package references safely |
-| `diagnostics` | Collect or inspect counters, traces, dumps, or GC artifacts |
-| `docs-impact` | Find documentation affected by a change |
-| `dotnet-format` | Check or apply C# formatting |
-| `dotnet-verify` | Validate affected .NET projects and tests |
-| `finish-pr` | Prepare an authorized push and pull request |
-| `issue-start` | Start a safe branch for a specific open issue |
-| `jev-judgment` | Reduce a bounded ambiguous candidate set |
-| `package-audit` | Audit .NET vulnerability metadata on request |
-| `performance-investigation` | Investigate an observed performance regression |
-| `prepare-commit` | Check local commit scope and Git safety |
-| `release-verify` | Run explicitly requested full/release validation |
-| `repo-health` | Compare repository configuration with toolkit policy |
-| `reproducible-build` | Audit deterministic build reproducibility |
-| `roadmap-next` | Choose from explicit roadmap/dependency metadata |
-| `sbom` | Generate or verify a release SBOM on request |
-| `security-scan` | Run or triage scoped analyzers and SARIF |
-| `test-quality` | Assess targeted tests and optional mutation testing |
-| `versioning` | Apply an existing Git-derived version policy |
+| `address-pr-review`, `prepare-commit`, `finish-pr`, `issue-start`, `roadmap-next` | Scoped review-feedback, commit, PR, issue-branch, and next-work workflows. |
+| `repo-health`, `docs-impact`, `architecture-change` | Repository policy, documentation impact, and component-boundary analysis. |
+| `run-dotnet-tests`, `write-dotnet-tests`, `dotnet-test-quality`, `dotnet-coverage` | Narrow test planning/execution, test authoring, quality review, and coverage interpretation. |
+| `diagnose-build`, `optimize-build`, `diagnose-dotnet`, `investigate-dotnet-performance`, `benchmark` | Build, MSBuild, runtime, measured performance, and explicit benchmark work. |
+| `dotnet-format`, `dependency-change`, `package-audit`, `api-compatibility`, `reproducible-build`, `release-verify`, `sbom`, `versioning` | Focused engineering and release gates. |
+| `ci-triage`, `security-scan` | GitHub Actions and deterministic security/SARIF evidence. |
+| `jev-judgment` | A bounded semantic tie-break after deterministic narrowing. |
+| `agent-maintenance` | Owned-link, instruction, agent, and toolkit configuration maintenance. |
 
-Expensive, mutating, security-sensitive, or release-oriented skills are intentionally
-on demand. `finish-pr` prepares publishing work but does not override approval or merge
-policy. JEV and package-audit skills also require their explicit prerequisites. Runtime
-instructions remain canonical in the
-[`skills` directory](https://github.com/simplexidev/codex-toolkit/tree/develop/v2.0.0/plugins/codex-toolkit/skills);
-they are not copied here as human prose.
+Discovery is intentionally selective: Codex matches skill metadata to the task, then the
+skill directs a small workflow. Detailed runtime references load only when the selected
+skill and evidence call for them—for example, MSBuild diagnostics, test framework edge
+cases, or JEV calibration. Broad repository maps, binary traces, dumps, and every skill
+are not meant to enter ordinary context.
+
+Many skills have an `agents/openai.yaml` descriptor, but the active behavior lives in the
+matching `SKILL.md`. The product's `validate` command checks runtime references and
+metadata; product `eval` is an offline scenario-integrity check. See
+[skill authoring](../development/skill-authoring.md) for contribution rules.

@@ -42,8 +42,9 @@ and preserve unrelated work.
 
 After each repository has its initial commit, use its designated integration base:
 
-1. Fetch and prune, then start clean from the current base. Product v2 work targets
-   `develop/v2.0.0` once established; docs and metrics work target their default branch.
+1. Fetch and prune, then start clean from the current base. Product v3 work targets
+   `develop/v3.0.0`; docs and metrics work also target their corresponding
+   `develop/v3.0.0` integration line.
 2. Create one fresh branch named `roadmap/<phase-slug>` for one focused phase.
 3. Make changes only in the repository that owns the phase. Sibling repositories may be
    read for verification.

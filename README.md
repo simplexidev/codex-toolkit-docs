@@ -20,7 +20,7 @@ The repositories have deliberately separate jobs:
 - [`codex-toolkit-metrics`](https://github.com/simplexidev/codex-toolkit-metrics) owns
   evaluation code, scenarios, sanitized metrics, and the dashboard.
 
-These pages describe the `develop/v2.0.0` development line unless a page says otherwise.
+These pages describe the `develop/v3.0.0` development line unless a page says otherwise.
 For an installed release, prefer the documentation and configuration shipped with that
 tag when behavior differs.
 

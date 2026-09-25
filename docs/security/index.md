@@ -82,4 +82,4 @@ Do not open a public issue containing credentials, private source, dumps, or exp
 details. Use the product repository's private vulnerability reporting feature when
 available; otherwise ask maintainers for a private channel before disclosing details.
 The canonical supported-version policy is the product's
-[`SECURITY.md`](https://github.com/simplexidev/codex-toolkit/blob/develop/v3.0.0/SECURITY.md).
+[`SECURITY.md`](https://github.com/simplexidev/sdeveng/blob/develop/v3.0.0/SECURITY.md).

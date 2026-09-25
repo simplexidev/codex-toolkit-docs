@@ -16,7 +16,7 @@ override this policy.
 | `agent-tool-contracts.json` | Versioned shape contracts for structured command output |
 
 Treat the product's
-[`schemas/`](https://github.com/simplexidev/codex-toolkit/tree/develop/v3.0.0/schemas)
+[`schemas/`](https://github.com/simplexidev/sdeveng/tree/develop/v3.0.0/schemas)
 as canonical for fields and allowed values. Keep configuration and schema changes in the
 same product contribution.
 

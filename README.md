@@ -4,13 +4,11 @@ SimplexiDev Engineering Toolkit gives Codex a small set of safe, repeatable repo
 one .NET utility. It favors exact computation first, bounded semantic judgment only when
 useful, and general model reasoning for work that genuinely needs it.
 
-This is the human documentation for `simplexidev/sdeveng`, currently served from the
-legacy [`simplexidev/codex-toolkit`](https://github.com/simplexidev/codex-toolkit)
-repository until the rename phase. Start with
+This is the human documentation for [`simplexidev/sdeveng`](https://github.com/simplexidev/sdeveng).
+Start with
 [what the toolkit is](docs/getting-started/index.md), then [install it](docs/getting-started/install.md)
 or browse the [documentation map](docs/README.md). The public metrics dashboard is at
-the future `sdeveng-metrics-dashboard` site (currently
-<https://simplexidev.github.io/codex-toolkit-metrics/>); read the
+<https://simplexidev.github.io/sdeveng-metrics-dashboard/>; read the
 [interpretation guide](docs/metrics/dashboard.md) before comparing results.
 
 The repositories have deliberately separate jobs:
@@ -19,8 +17,9 @@ The repositories have deliberately separate jobs:
   project template, AgentTool, skills, native agent, runtime references, and releases.
 - This repository owns human installation, usage, architecture, security, and
   contributor guidance. Nothing here is loaded at runtime.
-- `sdeveng-metrics-tooling` owns
-  evaluation code, scenarios, sanitized metrics, and the dashboard.
+- `sdeveng-metrics-tooling` owns evaluation code, scenarios, schemas, and measurement tooling.
+- `sdeveng-metrics-data` owns reviewed, sanitized metrics history.
+- `sdeveng-metrics-dashboard` owns dashboard source and Pages publication.
 
 These pages describe the `develop/v3.0.0` development line unless a page says otherwise.
 For an installed release, prefer the documentation and configuration shipped with that

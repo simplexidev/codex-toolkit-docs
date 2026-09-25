@@ -1,14 +1,13 @@
 # Develop the product
 
 For the complete contributor workflow across the product, docs, and metrics repositories,
-start with [three-repository development workflow](workflow.md).
+start with the [five-repository development workflow](workflow.md).
 
 Product code, skills, runtime references, templates, tests, and releases belong in
-`simplexidev/sdeveng` (currently served from the legacy
-[`simplexidev/codex-toolkit`](https://github.com/simplexidev/codex-toolkit) URL). Human prose
-belongs here in `sdeveng-docs`, and evaluator/dashboard work belongs in
-`sdeveng-metrics-tooling` (currently served from the legacy
-[`metrics repository`](https://github.com/simplexidev/codex-toolkit-metrics) URL).
+[`simplexidev/sdeveng`](https://github.com/simplexidev/sdeveng). Human prose belongs here
+in `sdeveng-docs`; evaluator, versioned data, and dashboard work belong in the respective
+`sdeveng-metrics-tooling`, `sdeveng-metrics-data`, and `sdeveng-metrics-dashboard`
+repositories.
 
 The product requires .NET 10. From its checkout, run:
 

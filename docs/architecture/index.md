@@ -9,16 +9,14 @@ only the material it needs.
 ## One plugin and one template
 
 The unified plugin lives in `sdeveng` at
-[`plugins/sdeveng/`](https://github.com/simplexidev/codex-toolkit/tree/develop/v3.0.0/plugins/sdeveng)
-(currently served from the legacy repository URL).
+[`plugins/sdeveng/`](https://github.com/simplexidev/sdeveng/tree/develop/v3.0.0/plugins/sdeveng).
 Its manifest provides discovery metadata, `skills/` contains narrow task workflows, and
 `references/` contains compact runtime material loaded only when a workflow calls for it.
 Adding a capability normally means extending this plugin; it does not mean creating
 another toolkit plugin or installing an upstream marketplace wholesale.
 
 The single template bundle lives in `sdeveng` at
-[`templates/project/`](https://github.com/simplexidev/codex-toolkit/tree/develop/v3.0.0/templates/project)
-(currently served from the legacy repository URL).
+[`templates/project/`](https://github.com/simplexidev/sdeveng/tree/develop/v3.0.0/templates/project).
 It is source material for adopting repositories: project instructions, Codex settings,
 pull-request conventions, and optional .NET defaults. Copying selected template files
 does not make the adopting repository depend on the toolkit checkout, this documentation,
@@ -63,8 +61,8 @@ request + installed/project instructions
 ## Product components
 
 Production executable logic lives in the product repository's single .NET 10 file-based
-app, [`tools/AgentTool.cs`](https://github.com/simplexidev/codex-toolkit/blob/develop/v3.0.0/tools/AgentTool.cs)
-in `sdeveng` (currently served from the legacy repository URL).
+app, [`tools/AgentTool.cs`](https://github.com/simplexidev/sdeveng/blob/develop/v3.0.0/tools/AgentTool.cs)
+in `sdeveng`.
 It owns CLI parsing, bounded process execution, repository and MSBuild inspection, output
 compaction, installation ownership, result-store operations, and JEV HTTP requests. The
 utility uses the .NET base class library; tests link the same source rather than maintaining
@@ -83,15 +81,16 @@ presented twice.
 
 ## Repository boundaries
 
-- `sdeveng` (currently served from the legacy
-  [`codex-toolkit`](https://github.com/simplexidev/codex-toolkit) URL) owns runtime code,
+- [`sdeveng`](https://github.com/simplexidev/sdeveng) owns runtime code,
   configuration, schemas, tests, installation, agent-consumed references, and releases.
-- `sdeveng-docs` (currently served from the legacy
-  [`codex-toolkit-docs`](https://github.com/simplexidev/codex-toolkit-docs) URL) owns human
+- [`sdeveng-docs`](https://github.com/simplexidev/sdeveng-docs) owns human
   explanations. It is not a runtime dependency.
-- `sdeveng-metrics-tooling` (currently served from the legacy
-  [`codex-toolkit-metrics`](https://github.com/simplexidev/codex-toolkit-metrics) URL) owns the
-  evaluator, scenarios, schemas and statistics, sanitized data, dashboard, and Pages.
+- [`sdeveng-metrics-tooling`](https://github.com/simplexidev/sdeveng-metrics-tooling)
+  owns the evaluator, scenarios, schemas, and statistics.
+- [`sdeveng-metrics-data`](https://github.com/simplexidev/sdeveng-metrics-data) owns
+  sanitized, versioned aggregate history.
+- [`sdeveng-metrics-dashboard`](https://github.com/simplexidev/sdeveng-metrics-dashboard)
+  owns static presentation and Pages publication.
 
 The product works without either sibling checkout. Metrics evaluation needs a subject
 checkout when it measures the product, but the product never calls into the evaluator.

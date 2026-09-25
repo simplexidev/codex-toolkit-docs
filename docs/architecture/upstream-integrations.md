@@ -8,7 +8,7 @@ verified setup recipes.
 ## Derivation and provenance
 
 The canonical
-[`upstream/dotnet-skills.json`](https://github.com/simplexidev/codex-toolkit/blob/develop/v3.0.0/upstream/dotnet-skills.json)
+[`upstream/dotnet-skills.json`](https://github.com/simplexidev/sdeveng/blob/develop/v3.0.0/upstream/dotnet-skills.json)
 records the inspected `dotnet/skills` repository, branch, commit, inspection date, license,
 inventory summary, and per-capability decisions. A decision can keep an upstream skill as
 an independently installed reference, use deterministic toolkit functionality for exact
@@ -42,7 +42,7 @@ never automatically merged.
 
 Install third-party skills or tools separately from their current official instructions.
 Check the selected version's license and notices before redistribution. The product's
-[`upstream/`](https://github.com/simplexidev/codex-toolkit/tree/develop/v2.0.0/upstream)
+[`upstream/`](https://github.com/simplexidev/sdeveng/tree/develop/v2.0.0/upstream)
 directory is the canonical recorded policy.
 
 An upstream comparison in metrics means the pinned overlay named by that evaluation plan.

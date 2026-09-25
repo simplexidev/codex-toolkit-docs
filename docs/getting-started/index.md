@@ -14,9 +14,7 @@ uncertain result.
 
 - Git.
 - The .NET 10 SDK selected by the product's `global.json`.
-- A stable checkout of the
-  `sdeveng` repository (currently served from the legacy
-  [`codex-toolkit` URL](https://github.com/simplexidev/codex-toolkit)).
+- A stable checkout of the [`sdeveng` repository](https://github.com/simplexidev/sdeveng).
 - Codex, if you want installed instructions, skills, or the native reviewer agent.
 - Optional: GitHub CLI for GitHub-aware commands and a TypeSafe API credential for live
   JEV calls. Neither is needed for normal tests or offline validation.

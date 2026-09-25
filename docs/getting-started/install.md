@@ -4,7 +4,7 @@ Keep the toolkit checkout at a stable path. The installer creates symbolic links
 does not copy the runtime or rewrite your existing Codex configuration.
 
 ```console
-git clone https://github.com/simplexidev/codex-toolkit.git sdeveng
+git clone https://github.com/simplexidev/sdeveng.git
 cd sdeveng
 dotnet tools/AgentTool.cs install --dry-run
 dotnet tools/AgentTool.cs install --bin

@@ -8,7 +8,7 @@ verified setup recipes.
 ## Derivation and provenance
 
 The canonical
-[`upstream/dotnet-skills.json`](https://github.com/simplexidev/codex-toolkit/blob/develop/v2.0.0/upstream/dotnet-skills.json)
+[`upstream/dotnet-skills.json`](https://github.com/simplexidev/codex-toolkit/blob/develop/v3.0.0/upstream/dotnet-skills.json)
 records the inspected `dotnet/skills` repository, branch, commit, inspection date, license,
 inventory summary, and per-capability decisions. A decision can keep an upstream skill as
 an independently installed reference, use deterministic toolkit functionality for exact
@@ -30,7 +30,7 @@ lock. A license label there is not a substitute for checking the exact package v
 ## Context and installation policy
 
 Upstream plugins remain separately installable. They are never bundled as additional
-Codex Toolkit plugins, and the toolkit does not install an entire upstream marketplace.
+SimplexiDev Engineering Toolkit plugins, and the toolkit does not install an entire upstream marketplace.
 Use compact decision metadata for routing, then load or install one upstream capability
 only for an explicit task that benefits from it. This preserves the one-plugin architecture
 and prevents broad capability coverage from imposing broad context cost.

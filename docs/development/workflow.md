@@ -1,6 +1,6 @@
 # Three-repository development workflow
 
-Codex Toolkit development uses three sibling repositories. Keep them beside one another
+SimplexiDev Engineering Toolkit development uses three sibling repositories. Keep them beside one another
 so product, documentation, and evaluation work can be inspected together without making
 any repository a runtime dependency of another:
 
@@ -84,13 +84,13 @@ synchronized. Installer tests must use temporary homes, never a real Codex profi
 For metrics (using the SDK selected by `global.json`):
 
 ```console
-dotnet restore CodexToolkit.Metrics.slnx
-dotnet test CodexToolkit.Metrics.slnx
-dotnet run --project src/CodexToolkit.Metrics -- validate-evaluation tests/CodexToolkit.Metrics.Tests/Fixtures/evaluation-valid-v1.json
-dotnet run --project src/CodexToolkit.Metrics -- validate-public data/public/example-summary.json
-dotnet run --project src/CodexToolkit.Metrics -- dashboard-check dashboard
-dotnet run --project src/CodexToolkit.Metrics -- publish-pages dashboard data/public _site
-dotnet format CodexToolkit.Metrics.slnx --no-restore --verify-no-changes
+dotnet restore SdevEng.Metrics.slnx
+dotnet test SdevEng.Metrics.slnx
+dotnet run --project src/SdevEng.Metrics -- validate-evaluation tests/SdevEng.Metrics.Tests/Fixtures/evaluation-valid-v1.json
+dotnet run --project src/SdevEng.Metrics -- validate-public data/public/example-summary.json
+dotnet run --project src/SdevEng.Metrics -- dashboard-check dashboard
+dotnet run --project src/SdevEng.Metrics -- publish-pages dashboard data/public _site
+dotnet format SdevEng.Metrics.slnx --no-restore --verify-no-changes
 ```
 
 For this documentation repository, verify links and Markdown formatting, review the

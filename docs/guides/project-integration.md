@@ -1,7 +1,7 @@
 # Add the toolkit to a project
 
 Install the central toolkit once, then copy only the relevant files from the product's
-[`templates/project`](https://github.com/simplexidev/codex-toolkit/tree/develop/v2.0.0/templates/project)
+[`templates/project`](https://github.com/simplexidev/codex-toolkit/tree/develop/v3.0.0/templates/project)
 directory into a trusted target repository.
 
 1. Merge the template `AGENTS.md` with existing instructions and fill in architecture,

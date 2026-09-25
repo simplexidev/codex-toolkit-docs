@@ -1,6 +1,6 @@
 # Architecture
 
-Codex Toolkit is deliberately one runtime product rather than a collection of bundled
+SimplexiDev Engineering Toolkit is deliberately one runtime product rather than a collection of bundled
 plugins. It has one discoverable plugin, one opt-in project-template bundle, one
 deterministic utility, and a small set of separately discovered native agents. This keeps
 installation ownership and routing understandable while allowing each workflow to load
@@ -9,14 +9,14 @@ only the material it needs.
 ## One plugin and one template
 
 The unified plugin lives at
-[`plugins/codex-toolkit/`](https://github.com/simplexidev/codex-toolkit/tree/develop/v2.0.0/plugins/codex-toolkit).
+[`plugins/sdeveng/`](https://github.com/simplexidev/codex-toolkit/tree/develop/v3.0.0/plugins/sdeveng).
 Its manifest provides discovery metadata, `skills/` contains narrow task workflows, and
 `references/` contains compact runtime material loaded only when a workflow calls for it.
 Adding a capability normally means extending this plugin; it does not mean creating
 another toolkit plugin or installing an upstream marketplace wholesale.
 
 The single template bundle lives at
-[`templates/project/`](https://github.com/simplexidev/codex-toolkit/tree/develop/v2.0.0/templates/project).
+[`templates/project/`](https://github.com/simplexidev/codex-toolkit/tree/develop/v3.0.0/templates/project).
 It is source material for adopting repositories: project instructions, Codex settings,
 pull-request conventions, and optional .NET defaults. Copying selected template files
 does not make the adopting repository depend on the toolkit checkout, this documentation,
@@ -61,7 +61,7 @@ request + installed/project instructions
 ## Product components
 
 Production executable logic lives in the product repository's single .NET 10 file-based
-app, [`tools/AgentTool.cs`](https://github.com/simplexidev/codex-toolkit/blob/develop/v2.0.0/tools/AgentTool.cs).
+app, [`tools/AgentTool.cs`](https://github.com/simplexidev/codex-toolkit/blob/develop/v3.0.0/tools/AgentTool.cs).
 It owns CLI parsing, bounded process execution, repository and MSBuild inspection, output
 compaction, installation ownership, result-store operations, and JEV HTTP requests. The
 utility uses the .NET base class library; tests link the same source rather than maintaining

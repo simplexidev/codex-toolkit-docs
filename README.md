@@ -1,6 +1,6 @@
-# Codex Toolkit documentation
+# SimplexiDev Engineering Toolkit documentation
 
-Codex Toolkit gives Codex a small set of safe, repeatable repository workflows backed by
+SimplexiDev Engineering Toolkit gives Codex a small set of safe, repeatable repository workflows backed by
 one .NET utility. It favors exact computation first, bounded semantic judgment only when
 useful, and general model reasoning for work that genuinely needs it.
 

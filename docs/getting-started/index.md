@@ -1,6 +1,6 @@
 # Start here
 
-Codex Toolkit is a collection of focused Codex workflows for repository and .NET work.
+SimplexiDev Engineering Toolkit is a collection of focused Codex workflows for repository and .NET work.
 It combines one local command-line program, a Codex plugin containing 29 skills, a
 project template, global instructions, and one optional read-only reviewer agent.
 

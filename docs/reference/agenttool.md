@@ -1,7 +1,7 @@
 # AgentTool command reference
 
 `AgentTool` is the product's single .NET 10 file-based utility. Run it from the toolkit
-checkout, or use the Unix `codex-agent-tool` link installed with `--bin`. The checkout's
+checkout, or use the Unix `sdeveng (legacy codex-agent-tool)` link installed with `--bin`. The checkout's
 `help` output is authoritative for its version:
 
 ```console
@@ -11,7 +11,8 @@ dotnet tools/AgentTool.cs help
 Use `--` after the source path when an option could be interpreted by the `dotnet` host.
 `--root DIR` selects the target repository; `--toolkit DIR` selects a toolkit checkout;
 `--json` requests structured JSON; and `--help` prints usage. AgentTool discovers its
-checkout from the source path, then `CODEX_TOOLKIT_ROOT`, then parent directories. It
+checkout from the source path, then `SDEVENG_ROOT`, then parent directories. The legacy
+`CODEX_TOOLKIT_ROOT` variable remains supported for v2 installations. It
 writes bounded JSON, placing oversized rendered output and command artifacts under the
 target's ignored `.agent-tool/` directory.
 

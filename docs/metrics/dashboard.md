@@ -4,6 +4,17 @@ Open the dashboard at <https://simplexidev.github.io/codex-toolkit-metrics/>. It
 of manifest-approved public aggregates, not a live telemetry console and not an input to
 the toolkit runtime.
 
+## Current v2 status
+
+The current v2 public dashboard contains reviewed static-cost, baseline, and agent-capability
+aggregates. It does **not** publish a v2 release-acceptance result. The earlier acceptance
+snapshot was withdrawn after final review because its evaluation matrix, capability mapping,
+and evidence coverage were not sufficient for a release decision. Do not use the dashboard to
+claim that v2 is release-ready, that the custom reviewer was exercised in delegation, or that
+JEV produced a measured context benefit. The metrics repository's
+[`v2 acceptance status`](https://github.com/simplexidev/codex-toolkit-metrics/blob/v2.0.0/reports/v2-acceptance.md)
+records the withheld decision and the conditions for a future acceptance publication.
+
 ## Read a result in this order
 
 1. Confirm the subject repository and revision, generation time, scenario count, and
@@ -57,6 +68,10 @@ instructions live in the evaluator until a separate product change adopts them.
 Synthetic approval means the artifact demonstrates the measurement and publication path
 with synthetic inputs. Reviewed approval means a human approved the sanitized aggregate;
 it does not turn a small or narrow sample into a universal benchmark.
+
+The production dashboard excludes synthetic demonstration fixtures. A displayed reviewed
+aggregate still has the scope, source revision, and approval shown with it; only artifacts
+in a compatible series should be interpreted as a trend.
 
 ## Limitations and non-claims
 

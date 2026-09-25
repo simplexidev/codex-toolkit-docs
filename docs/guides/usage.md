@@ -1,6 +1,6 @@
 # Common workflows
 
-Run AgentTool from the toolkit checkout or use `codex-agent-tool` after Unix launcher
+Run AgentTool from the toolkit checkout or use `sdeveng (legacy codex-agent-tool)` after Unix launcher
 installation. Add `--root /path/to/project` when the target is not the current directory.
 
 ```console

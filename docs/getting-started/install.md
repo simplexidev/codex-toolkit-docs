@@ -21,7 +21,7 @@ The default install creates links for:
 - `global/AGENTS.md` at the selected Codex home's `AGENTS.md`;
 - each product `agents/*.toml` file under the Codex home's `agents/` directory;
 - each toolkit skill under the user's `.agents/skills/` directory; and
-- on Unix with `--bin`, `~/.local/bin/codex-agent-tool`.
+- on Unix with `--bin`, `~/.local/bin/sdeveng (legacy codex-agent-tool)`.
 
 Ownership metadata is stored under the selected Codex directory so update and uninstall
 can distinguish toolkit-owned links from user files. Existing `config.toml` is never

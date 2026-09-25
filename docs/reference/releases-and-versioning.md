@@ -2,8 +2,8 @@
 
 Use a reviewed GitHub release or tag for repeatable installation. The `develop/v2.0.0`
 branch is a development line, not proof that v2 has shipped. Consult the product's
-[`releases`](https://github.com/simplexidev/codex-toolkit/releases) and
-[`CHANGELOG.md`](https://github.com/simplexidev/codex-toolkit/blob/develop/v2.0.0/CHANGELOG.md)
+[`releases`](https://github.com/simplexidev/sdeveng/releases) and
+[`CHANGELOG.md`](https://github.com/simplexidev/sdeveng/blob/develop/v2.0.0/CHANGELOG.md)
 for the actual published history.
 
 Product versions are synchronized across `config/toolkit.json` and both plugin manifest

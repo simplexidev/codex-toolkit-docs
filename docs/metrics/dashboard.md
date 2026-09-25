@@ -1,8 +1,6 @@
 # Interpreting the metrics dashboard
 
-Open the dashboard at <https://simplexidev.github.io/sdeveng-metrics-dashboard/> once the
-repository split is complete; during migration it remains at
-<https://simplexidev.github.io/codex-toolkit-metrics/>. It is a view
+Open the dashboard at <https://simplexidev.github.io/sdeveng-metrics-dashboard/>. It is a view
 of manifest-approved public aggregates, not a live telemetry console and not an input to
 the toolkit runtime.
 
@@ -14,7 +12,7 @@ snapshot was withdrawn after final review because its evaluation matrix, capabil
 and evidence coverage were not sufficient for a release decision. Do not use the dashboard to
 claim that v2 is release-ready, that the custom reviewer was exercised in delegation, or that
 JEV produced a measured context benefit. The metrics repository's
-[`v2 acceptance status`](https://github.com/simplexidev/codex-toolkit-metrics/blob/v2.0.0/reports/v2-acceptance.md)
+[`v2 acceptance status`](https://github.com/simplexidev/sdeveng-metrics-tooling/blob/v2.0.0/reports/v2-acceptance.md)
 records the withheld decision and the conditions for a future acceptance publication.
 
 ## Read a result in this order

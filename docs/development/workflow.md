@@ -1,14 +1,16 @@
-# Three-repository development workflow
+# Five-repository development workflow
 
-SimplexiDev Engineering Toolkit development uses three sibling repositories. Keep them beside one another
+SimplexiDev Engineering Toolkit development uses five sibling repositories. Keep them beside one another
 so product, documentation, and evaluation work can be inspected together without making
 any repository a runtime dependency of another:
 
 ```text
 workspace/
 ├── sdeveng/                  # product runtime
-├── sdeveng-docs/             # this human documentation site
-└── sdeveng-metrics-tooling/  # evaluator, public metrics, and dashboard
+├── sdeveng-docs/              # this human documentation site
+├── sdeveng-metrics-tooling/   # evaluator, schemas, and measurement code
+├── sdeveng-metrics-data/      # reviewed sanitized aggregates
+└── sdeveng-metrics-dashboard/ # static dashboard and Pages workflow
 ```
 
 Local runner and prompt state may live in `.agent-results/prompts/` next to those
@@ -27,12 +29,12 @@ architecture, security, contributor guidance, and metrics methodology. It is nev
 runtime input. Explain runtime material here in human terms rather than copying a compact
 skill reference or `AGENTS.md`.
 
-`sdeveng-metrics-tooling` owns evaluator code, scenarios, schemas, statistics, sanitized
-versioned public data, and the dashboard. It can evaluate the product through stable
-structured outputs, but is neither a plugin nor a product dependency. Its Pages site is
-the future `sdeveng-metrics-dashboard` site (currently
-<https://simplexidev.github.io/codex-toolkit-metrics/>); do not create a separate
-`simplexidev.github.io` repository.
+`sdeveng-metrics-tooling` owns evaluator code, scenarios, schemas, and statistics.
+`sdeveng-metrics-data` owns reviewed sanitized aggregates, while
+`sdeveng-metrics-dashboard` owns static presentation and publishes
+<https://simplexidev.github.io/sdeveng-metrics-dashboard/>. The repositories cooperate
+through versioned files and explicit checkout paths; none is a plugin or product runtime
+dependency.
 
 ## Start and finish a change
 
@@ -88,9 +90,9 @@ For metrics (using the SDK selected by `global.json`):
 dotnet restore SdevEng.Metrics.slnx
 dotnet test SdevEng.Metrics.slnx
 dotnet run --project src/SdevEng.Metrics -- validate-evaluation tests/SdevEng.Metrics.Tests/Fixtures/evaluation-valid-v1.json
-dotnet run --project src/SdevEng.Metrics -- validate-public data/public/example-summary.json
-dotnet run --project src/SdevEng.Metrics -- dashboard-check dashboard
-dotnet run --project src/SdevEng.Metrics -- publish-pages dashboard data/public _site
+dotnet run --project sdeveng-metrics-tooling/src/SdevEng.Metrics -- validate-public sdeveng-metrics-data/public/example-summary.json
+dotnet run --project sdeveng-metrics-tooling/src/SdevEng.Metrics -- dashboard-check sdeveng-metrics-dashboard
+dotnet run --project sdeveng-metrics-tooling/src/SdevEng.Metrics -- publish-pages sdeveng-metrics-dashboard sdeveng-metrics-data/public _site
 dotnet format SdevEng.Metrics.slnx --no-restore --verify-no-changes
 ```
 
@@ -156,7 +158,7 @@ print, serialize, echo, or pass it to unrelated subprocesses. Normal JEV tests a
 use fake HTTP and no key; a deliberately scoped live check is the exception.
 
 Report a security issue through the product repository's
-[private vulnerability reporting channel](https://github.com/simplexidev/codex-toolkit/security/advisories/new)
+[private vulnerability reporting channel](https://github.com/simplexidev/sdeveng/security/advisories/new)
 and include only a minimal sanitized reproduction. If that channel is unavailable, ask a
 maintainer for a private channel. Do not disclose an unpatched vulnerability in a public
 issue or evaluation artifact.

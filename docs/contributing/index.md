@@ -3,16 +3,16 @@
 Choose the repository by ownership before editing:
 
 - Runtime behavior, plugin skills, AgentTool, agent definitions, templates, schemas, and
-  releases: [`codex-toolkit`](https://github.com/simplexidev/codex-toolkit).
+  releases: [`sdeveng`](https://github.com/simplexidev/sdeveng).
 - Human guides and explanations: this repository.
 - Evaluator, scenarios, metrics schema/data, and dashboard:
-  [`codex-toolkit-metrics`](https://github.com/simplexidev/codex-toolkit-metrics).
+  [`sdeveng-metrics-tooling`](https://github.com/simplexidev/sdeveng-metrics-tooling).
 
 Read the target repository's `AGENTS.md`, start from its designated base, and keep one
 change focused on one concern. `AGENTS.md` guides coding agents; these documentation pages
 guide people, so do not duplicate agent instructions wholesale. Preserve unrelated work.
 Never commit secrets, private source, raw prompts/results, absolute developer paths, or
-temporary planning notes. Follow the [three-repository development workflow](../development/workflow.md)
+temporary planning notes. Follow the [five-repository development workflow](../development/workflow.md)
 for branch/PR discipline, validation, publication, and release expectations.
 
 For documentation changes, verify every behavioral claim against product code, schemas,

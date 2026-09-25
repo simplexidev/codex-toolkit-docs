@@ -36,16 +36,15 @@ release artifacts remain canonical in the product repository.
 - [Evaluation methodology](metrics/methodology.md)
 - [Interpret the metrics dashboard](metrics/dashboard.md)
 
-The metrics dashboard and sanitized versioned data will be published at
-<https://simplexidev.github.io/sdeveng-metrics-dashboard/>; during this migration they remain
-at <https://simplexidev.github.io/codex-toolkit-metrics/>. This repository explains how to
+The metrics dashboard is published at
+<https://simplexidev.github.io/sdeveng-metrics-dashboard/>. This repository explains how to
 interpret them; it does not implement or host the evaluator.
 
 ## Solve problems and contribute
 
 - [Troubleshooting](troubleshooting/index.md)
 - [Product development](development/index.md)
-- [Three-repository development workflow](development/workflow.md)
+- [Five-repository development workflow](development/workflow.md)
 - [Skill authoring](development/skill-authoring.md)
 - [Release process](development/releases.md)
 - [Contributing](contributing/index.md)
@@ -55,6 +54,5 @@ interpret them; it does not implement or host the evaluator.
 
 - [Source audience and migration manifest](migration-manifest.md)
 
-Runtime links should target canonical files in `simplexidev/sdeveng`; until the repository
-rename phase, those links use the legacy `simplexidev/codex-toolkit` URL. Human pages
+Runtime links should target canonical files in `simplexidev/sdeveng`. Human pages
 may quote small, stable examples, but they must not become a required runtime input.

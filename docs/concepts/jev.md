@@ -100,5 +100,5 @@ outcome accuracy. This is a starting constraint, not proof of general validity; 
 purpose, model, threshold, or input distribution may require new calibration.
 
 The runtime's compact JEV references remain in the
-[`jev-judgment` skill](https://github.com/simplexidev/codex-toolkit/tree/develop/v3.0.0/plugins/sdeveng/skills/jev-judgment);
+[`jev-judgment` skill](https://github.com/simplexidev/sdeveng/tree/develop/v3.0.0/plugins/sdeveng/skills/jev-judgment);
 this page is an independent human explanation.

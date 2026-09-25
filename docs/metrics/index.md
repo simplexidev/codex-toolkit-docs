@@ -1,12 +1,12 @@
 # Metrics and evaluation
 
-Evaluation implementation, scenarios, statistics, sanitized history, and dashboard code
-belong to `simplexidev/sdeveng-metrics-tooling`, currently served from the legacy
-[`simplexidev/codex-toolkit-metrics`](https://github.com/simplexidev/codex-toolkit-metrics)
-repository. The published dashboard will be
-<https://simplexidev.github.io/sdeveng-metrics-dashboard/>; during migration it remains at
-<https://simplexidev.github.io/codex-toolkit-metrics/>. The metrics repository and its
-versioned public files remain the source of truth behind the presentation.
+Evaluation implementation, scenarios, schemas, and statistics belong to
+[`simplexidev/sdeveng-metrics-tooling`](https://github.com/simplexidev/sdeveng-metrics-tooling).
+Reviewed aggregate history belongs to
+[`sdeveng-metrics-data`](https://github.com/simplexidev/sdeveng-metrics-data), and static
+presentation belongs to
+[`sdeveng-metrics-dashboard`](https://github.com/simplexidev/sdeveng-metrics-dashboard).
+The published dashboard is <https://simplexidev.github.io/sdeveng-metrics-dashboard/>.
 
 The product's `AgentTool eval` command performs inexpensive offline integrity checks for
 skill scenarios and fixtures. Unit tests cover executable behavior. Neither by itself

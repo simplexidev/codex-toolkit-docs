@@ -20,7 +20,7 @@ dotnet tools/AgentTool.cs -- dotnet verify --project /path/to/App.csproj
 
 ## Toolkit root not found
 
-Run the source file from its checkout, pass `--toolkit /path/to/codex-toolkit`, or set
+Run the source file from its checkout, pass `--toolkit /path/to/sdeveng`, or set
 the non-secret `SDEVENG_ROOT` variable. `CODEX_TOOLKIT_ROOT` remains a supported legacy
 alias for v2 installations.
 

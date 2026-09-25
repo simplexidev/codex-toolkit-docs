@@ -20,7 +20,7 @@ Framework and SDK choices must match the target project.
 You can inspect a target from anywhere:
 
 ```console
-dotnet /path/to/codex-toolkit/tools/AgentTool.cs repo affected-projects --root /path/to/project
+dotnet /path/to/sdeveng/tools/AgentTool.cs repo affected-projects --root /path/to/project
 ```
 
 MSBuild evaluation can execute imported project logic, so use it only on trusted

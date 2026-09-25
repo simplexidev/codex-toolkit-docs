@@ -8,6 +8,8 @@ Thumbs.db
 # Local render, preview, and tool output
 .cache/
 .agent-tool/
+.agent-tools/
+.agent-results/
 site/
 _site/
 *.log

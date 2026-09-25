@@ -3,8 +3,9 @@
 ## Current review record
 
 This is a current ownership and consumer check, not a migration plan. The active product
-identity is SimplexiDev Engineering Toolkit (`sdeveng`); the existing `codex-toolkit*`
-repository URLs remain the physical locations until the repository-rename phase. It was reviewed
+identity is SimplexiDev Engineering Toolkit (`sdeveng`). The canonical repository identities are
+`sdeveng`, `sdeveng-docs`, and `sdeveng-metrics-tooling`; the existing `codex-toolkit*`
+URLs are legacy migration locations until the repository-rename phase. It was reviewed
 against the candidate product revision `5a4b35e` on `develop/v2.0.0` and the candidate
 metrics revision `8d75907` on `main`. It supersedes the initial import inventory, whose
 historical paths and counts are not a reliable description of the current product.
@@ -17,14 +18,14 @@ product manifests and validation are canonical.
 
 | Material | Owner | Consumer boundary | Human-doc treatment |
 |---|---|---|---|
-| `tools/AgentTool.cs`, `config/`, `schemas/`, installers, tests, and release workflow | `codex-toolkit` | Runtime, tests, and release tooling | Explain behavior here; link to the product for the canonical source and schemas. |
-| `plugins/sdeveng/skills/*/SKILL.md` | `codex-toolkit` | Codex skill discovery and active agent workflows | Keep product-local. The [skills catalog](reference/skills.md) is an index, not a replacement. |
-| `plugins/sdeveng/skills/jev-judgment/references/` | `codex-toolkit` | Lazily loaded by the JEV skill through product-relative paths | Must remain product-local. [JEV and bounded judgment](concepts/jev.md) is a separate explanation for people. |
-| `global/AGENTS.md` and `agents/reviewer.toml` | `codex-toolkit` | Installed Codex instructions and native-agent discovery | Keep exact runtime files in the product; summarize their roles in human prose only. |
-| `templates/project/` | `codex-toolkit` | Explicit, user-copied project customization | Keep templates canonical in the product; explain selective adoption in [project integration](guides/project-integration.md). |
-| Product `README`, legal notices, and release notes | `codex-toolkit` | Product landing, distribution, and GitHub conventions | Keep product copies canonical; this site links or explains rather than relocating them. |
-| Evaluator, scenarios, schemas, sanitized public data, dashboard, and Pages workflow | `codex-toolkit-metrics` | Offline measurement and public dashboard publication | Keep implementation and data in metrics; explain method and interpretation in [metrics](metrics/index.md). |
-| Installation, use, configuration, architecture, security, examples, and contributor guidance | `codex-toolkit-docs` | Human readers only | This repository is never loaded by the runtime. |
+| `tools/AgentTool.cs`, `config/`, `schemas/`, installers, tests, and release workflow | `sdeveng` | Runtime, tests, and release tooling | Explain behavior here; link to the product for the canonical source and schemas. |
+| `plugins/sdeveng/skills/*/SKILL.md` | `sdeveng` | Codex skill discovery and active agent workflows | Keep product-local. The [skills catalog](reference/skills.md) is an index, not a replacement. |
+| `plugins/sdeveng/skills/jev-judgment/references/` | `sdeveng` | Lazily loaded by the JEV skill through product-relative paths | Must remain product-local. [JEV and bounded judgment](concepts/jev.md) is a separate explanation for people. |
+| `global/AGENTS.md` and `agents/reviewer.toml` | `sdeveng` | Installed Codex instructions and native-agent discovery | Keep exact runtime files in the product; summarize their roles in human prose only. |
+| `templates/project/` | `sdeveng` | Explicit, user-copied project customization | Keep templates canonical in the product; explain selective adoption in [project integration](guides/project-integration.md). |
+| Product `README`, legal notices, and release notes | `sdeveng` | Product landing, distribution, and GitHub conventions | Keep product copies canonical; this site links or explains rather than relocating them. |
+| Evaluator, scenarios, schemas, sanitized public data, dashboard, and Pages workflow | `sdeveng-metrics-tooling` | Offline measurement and public dashboard publication | Keep implementation and data in metrics; explain method and interpretation in [metrics](metrics/index.md). |
+| Installation, use, configuration, architecture, security, examples, and contributor guidance | `sdeveng-docs` | Human readers only | This repository is never loaded by the runtime. |
 
 ## Guardrails for future changes
 

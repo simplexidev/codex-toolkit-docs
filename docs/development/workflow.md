@@ -6,9 +6,9 @@ any repository a runtime dependency of another:
 
 ```text
 workspace/
-├── codex-toolkit/          # product runtime
-├── codex-toolkit-docs/     # this human documentation site
-└── codex-toolkit-metrics/  # evaluator, public metrics, and dashboard
+├── sdeveng/                  # product runtime
+├── sdeveng-docs/             # this human documentation site
+└── sdeveng-metrics-tooling/  # evaluator, public metrics, and dashboard
 ```
 
 Local runner and prompt state may live in `.agent-results/prompts/` next to those
@@ -16,21 +16,22 @@ repositories. It is local state: do not commit, move, delete, or publish it.
 
 ## Pick the owning repository
 
-`codex-toolkit` owns one unified Codex plugin, one project template, `AgentTool`, runtime
+`sdeveng` owns one unified Codex plugin, one project template, `AgentTool`, runtime
 skills, compact agent-consumed references, native/custom agent metadata and evidence,
 JEV integration, installers, tests, and releases. Runtime references stay there even when
 they are Markdown. Before moving any product document, search its consumers; a skill or
 agent-loaded reference must remain product-local.
 
-`codex-toolkit-docs` owns explanations for people: installation, configuration, examples,
+`sdeveng-docs` owns explanations for people: installation, configuration, examples,
 architecture, security, contributor guidance, and metrics methodology. It is never a
 runtime input. Explain runtime material here in human terms rather than copying a compact
 skill reference or `AGENTS.md`.
 
-`codex-toolkit-metrics` owns evaluator code, scenarios, schemas, statistics, sanitized
+`sdeveng-metrics-tooling` owns evaluator code, scenarios, schemas, statistics, sanitized
 versioned public data, and the dashboard. It can evaluate the product through stable
 structured outputs, but is neither a plugin nor a product dependency. Its Pages site is
-<https://simplexidev.github.io/codex-toolkit-metrics/>; do not create a separate
+the future `sdeveng-metrics-dashboard` site (currently
+<https://simplexidev.github.io/codex-toolkit-metrics/>); do not create a separate
 `simplexidev.github.io` repository.
 
 ## Start and finish a change

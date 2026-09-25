@@ -3,11 +3,11 @@
 ## Inspect and validate a change
 
 ```console
-dotnet /path/to/codex-toolkit/tools/AgentTool.cs repo changed-files \
+dotnet /path/to/sdeveng/tools/AgentTool.cs repo changed-files \
   --root /path/to/project --base main
-dotnet /path/to/codex-toolkit/tools/AgentTool.cs repo affected-projects \
+dotnet /path/to/sdeveng/tools/AgentTool.cs repo affected-projects \
   --root /path/to/project --base main
-dotnet /path/to/codex-toolkit/tools/AgentTool.cs -- dotnet verify \
+dotnet /path/to/sdeveng/tools/AgentTool.cs -- dotnet verify \
   --root /path/to/project --project tests/App.Tests.csproj
 ```
 
@@ -17,7 +17,7 @@ dependency graph uncertain, the toolkit widens validation.
 ## Summarize a large artifact
 
 ```console
-dotnet /path/to/codex-toolkit/tools/AgentTool.cs logs summarize \
+dotnet /path/to/sdeveng/tools/AgentTool.cs logs summarize \
   --root /path/to/project --file build.log
 ```
 
@@ -40,7 +40,7 @@ contain source, environment values, or credentials.
 ```
 
 ```console
-dotnet /path/to/codex-toolkit/tools/AgentTool.cs jev screen \
+dotnet /path/to/sdeveng/tools/AgentTool.cs jev screen \
   --input candidates.json --dry-run
 ```
 

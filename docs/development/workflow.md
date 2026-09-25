@@ -69,10 +69,10 @@ that every optional release or live integration check has run.
 For the product (requires .NET 10):
 
 ```console
-dotnet test tests/AgentTool.Tests/AgentTool.Tests.csproj
+dotnet test tests/SdevEng.Tests/SdevEng.Tests.csproj
 dotnet tools/AgentTool.cs validate
 dotnet tools/AgentTool.cs eval
-dotnet format tests/AgentTool.Tests/AgentTool.Tests.csproj --no-restore --verify-no-changes
+dotnet format tests/SdevEng.Tests/SdevEng.Tests.csproj --no-restore --verify-no-changes
 git diff --check
 ```
 

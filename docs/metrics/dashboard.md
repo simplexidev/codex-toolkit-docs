@@ -1,6 +1,8 @@
 # Interpreting the metrics dashboard
 
-Open the dashboard at <https://simplexidev.github.io/codex-toolkit-metrics/>. It is a view
+Open the dashboard at <https://simplexidev.github.io/sdeveng-metrics-dashboard/> once the
+repository split is complete; during migration it remains at
+<https://simplexidev.github.io/codex-toolkit-metrics/>. It is a view
 of manifest-approved public aggregates, not a live telemetry console and not an input to
 the toolkit runtime.
 

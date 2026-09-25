@@ -1,9 +1,10 @@
 # Metrics and evaluation
 
 Evaluation implementation, scenarios, statistics, sanitized history, and dashboard code
-belong to
-[`simplexidev/codex-toolkit-metrics`](https://github.com/simplexidev/codex-toolkit-metrics).
-The published dashboard is
+belong to `simplexidev/sdeveng-metrics-tooling`, currently served from the legacy
+[`simplexidev/codex-toolkit-metrics`](https://github.com/simplexidev/codex-toolkit-metrics)
+repository. The published dashboard will be
+<https://simplexidev.github.io/sdeveng-metrics-dashboard/>; during migration it remains at
 <https://simplexidev.github.io/codex-toolkit-metrics/>. The metrics repository and its
 versioned public files remain the source of truth behind the presentation.
 

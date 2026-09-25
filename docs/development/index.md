@@ -4,14 +4,16 @@ For the complete contributor workflow across the product, docs, and metrics repo
 start with [three-repository development workflow](workflow.md).
 
 Product code, skills, runtime references, templates, tests, and releases belong in
-[`simplexidev/codex-toolkit`](https://github.com/simplexidev/codex-toolkit). Human prose
-belongs here, and evaluator/dashboard work belongs in the
-[`metrics repository`](https://github.com/simplexidev/codex-toolkit-metrics).
+`simplexidev/sdeveng` (currently served from the legacy
+[`simplexidev/codex-toolkit`](https://github.com/simplexidev/codex-toolkit) URL). Human prose
+belongs here in `sdeveng-docs`, and evaluator/dashboard work belongs in
+`sdeveng-metrics-tooling` (currently served from the legacy
+[`metrics repository`](https://github.com/simplexidev/codex-toolkit-metrics) URL).
 
 The product requires .NET 10. From its checkout, run:
 
 ```console
-dotnet test tests/AgentTool.Tests/AgentTool.Tests.csproj
+dotnet test tests/SdevEng.Tests/SdevEng.Tests.csproj
 dotnet tools/AgentTool.cs validate
 dotnet tools/AgentTool.cs eval
 git diff --check
